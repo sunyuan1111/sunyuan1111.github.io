@@ -1,0 +1,11 @@
+# Pinegrow local metadata and automatic backups
+_pgbackup/
+_pginfo/
+
+# Local demo videos are intentionally not published with this site.
+*.mp4
+*.mov
+*.webm
+*.avi
+
+.DS_Store
