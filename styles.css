@@ -69,29 +69,6 @@ img { display: block; max-width: 100%; }
   padding: 38px 38px 25px;
   align-items: center;
 }
-.site-nav {
-  position: absolute;
-  top: 19px;
-  left: 38px;
-  display: flex;
-  gap: 14px;
-  font-family: var(--sans);
-  font-size: 11px;
-  font-weight: 700;
-}
-.site-nav a { color: var(--muted); text-decoration: none; }
-.site-nav a:hover, .site-nav a:focus-visible { color: var(--pink); }
-.profile-section::before {
-  position: absolute;
-  top: -10px;
-  left: 51%;
-  width: 105px;
-  height: 24px;
-  content: "";
-  background: rgba(255, 230, 154, .72);
-  border: 1px solid rgba(219, 190, 89, .24);
-  transform: rotate(2deg);
-}
 .language-switch {
   position: absolute;
   top: 14px;
@@ -170,8 +147,8 @@ img { display: block; max-width: 100%; }
 }
 html[lang="zh-CN"] .content-section h2,
 html[lang="zh-CN"] .section-head h2 {
-  font-family: "CEF Title Local", var(--serif);
-  font-weight: 400;
+  font-family: var(--serif);
+  font-weight: 600;
 }
 .news-section { position: relative; }
 .news-section::after { position: absolute; right: 26px; bottom: -17px; z-index: 1; color: var(--pink); content: "✦"; font-size: 29px; transform: rotate(12deg); }
@@ -328,7 +305,6 @@ a.project-media:hover img, a.project-media:focus-visible img { transform: scale(
   body { font-size: 14px; }
   .page { width: min(100% - 24px, 520px); margin-top: 22px; }
   .profile-section { grid-template-columns: 1fr; padding: 27px 22px 18px; }
-  .site-nav { top: 16px; left: 22px; }
   .profile-copy { padding-right: 0; }
   .profile-copy h1 { font-size: 32px; }
   .profile-copy h1 small { display: block; margin: 4px 0 0; font-size: 16px; }
