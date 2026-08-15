@@ -191,6 +191,7 @@ a.project-media:hover img, a.project-media:focus-visible img { transform: scale(
 .project-copy h3 a:hover, .project-copy h3 a:focus-visible { color: var(--pink); }
 .project-copy .subtitle { margin: 3px 0 8px; color: var(--ink); font-weight: 700; }
 .project-copy > p:not(.venue):not(.subtitle):not(.project-links) { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.6; }
+.project-copy > p:not(.venue):not(.subtitle):not(.project-links) + p:not(.venue):not(.subtitle):not(.project-links) { margin-top: 8px; }
 .project-links { display: flex; gap: 7px; margin: 7px 0 0; font-size: 11px; font-weight: 700; }
 .project-links, .section-head > p, .site-footer { font-family: var(--sans); }
 .tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 10px; }
