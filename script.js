@@ -46,7 +46,6 @@ languageButtons.forEach((button) => {
 });
 
 const savedLanguage = localStorage.getItem("portfolio-language");
-const browserLanguage = navigator.language.toLowerCase().startsWith("zh") ? "zh" : "en";
-setLanguage(savedLanguage || browserLanguage, false);
+setLanguage(savedLanguage || "en", false);
 
 document.querySelector("[data-current-year]").textContent = new Date().getFullYear();

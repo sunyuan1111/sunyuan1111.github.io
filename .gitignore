@@ -8,4 +8,7 @@ _pginfo/
 *.webm
 *.avi
 
+# Local paper drafts may include double-blind submissions; do not publish them by default.
+论文paper/
+
 .DS_Store
