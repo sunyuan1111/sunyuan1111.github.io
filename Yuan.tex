@@ -1,0 +1,139 @@
+% !TEX program = xelatex
+\documentclass[UTF8,a4paper,10pt,scheme=plain]{ctexart}
+
+\usepackage[
+  a4paper,
+  left=1.35cm,
+  right=1.35cm,
+  top=1.05cm,
+  bottom=1.05cm,
+  nohead
+]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fontawesome5}
+
+\definecolor{Ink}{HTML}{20242B}
+\definecolor{Muted}{HTML}{5F6875}
+\definecolor{Accent}{HTML}{7C5CFF}
+\definecolor{Rule}{HTML}{E6E2F2}
+
+\pagestyle{empty}
+\pagenumbering{gobble}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\tabcolsep}{0pt}
+\urlstyle{same}
+\linespread{1.02}
+\emergencystretch=2em
+
+\setlist[itemize]{
+  leftmargin=1.35em,
+  label=\raisebox{0.22ex}{\scriptsize\textbullet},
+  topsep=2pt,
+  itemsep=1.2pt,
+  parsep=0pt,
+  partopsep=0pt
+}
+
+\newcommand{\cvsection}[1]{%
+  \vspace{8pt}
+  {\large\bfseries\color{Ink}#1}\par
+  \vspace{2pt}
+  {\color{Accent}\rule{0.72cm}{1.25pt}}{\color{Rule}\rule{\dimexpr\linewidth-0.72cm\relax}{0.45pt}}\par
+  \vspace{3pt}
+}
+
+\newcommand{\cventry}[3]{%
+  \vspace{3pt}
+  \textbf{\color{Ink}#1}\hfill{\small\color{Muted}#2}\par
+  {\small\color{Muted}#3}\par
+}
+
+\newcommand{\paperentry}[2]{%
+  \item \textbf{#1}：#2
+}
+
+\newcommand{\contactsep}{\hspace{0.8em}{\color{Rule}|}\hspace{0.8em}}
+
+\begin{document}
+\small
+
+% ---------- Header ----------
+\begin{minipage}[t]{0.77\linewidth}
+  \vspace{0pt}
+  {\LARGE\bfseries\color{Ink} 孙源}\hspace{0.55em}{\large\color{Muted} Yuan Sun}\par
+  \vspace{3pt}
+  {\small\color{Muted} 求职方向：具身智能 / 机器人操作 / 机器人学习}\par
+  \vspace{4pt}
+  {\small\color{Muted}
+    \faEnvelope\ \href{mailto:17303347797@163.com}{17303347797@163.com}
+    \contactsep
+    \faGithub\ \href{https://github.com/sunyuan1111}{github.com/sunyuan1111}\par
+    具身智能、机器人抓取、跨具身泛化、真实机器人系统\par
+    个人网址：https://github.com/sunyuan1111.github.io
+  }
+\end{minipage}
+\hfill
+\begin{minipage}[t]{2.55cm}
+  \vspace{0pt}
+  \raggedleft
+  \fcolorbox{Rule}{white}{\includegraphics[width=2.36cm,height=3.12cm,keepaspectratio]{portrait.jpg}}
+\end{minipage}\par
+
+\cvsection{教育背景}
+\cventry{北京航空航天大学}{2026.09 -- 2029.06}{电子信息硕士}
+\cventry{重庆交通大学}{2022.09 -- 2026.06}{通信工程荣誉学士 \quad GPA：\textbf{4.16}/5 \quad 专业排名：\textbf{1}/63}
+
+
+\cvsection{科研经历}
+\cventry{清华大学计算机科学与技术系智能技术与系统实验室}{2025.11 -- 至今}{科研合作者 \quad 机器人抓取、跨夹爪/跨具身泛化、RGB-D 感知与 URDF 建模}
+\begin{itemize}
+  \item 围绕新末端执行器的抓取生成与接触稳定性开展研究，参与从问题定义、仿真验证到真实机器人实验的完整研究链路。
+  \item 参与跨夹爪语义抓取、具身对齐抓取生成、触觉抓取稳定性预测及杂乱场景目标取放等课题。
+\end{itemize}
+
+\cvsection{论文与科研成果}
+\begin{itemize}
+  \paperentry{共同第一作者，IROS 2026 已接收}{\textit{Ask Professor G. How to Grasp: Training-Free Cross-Gripper Grasping from an RGB-D Observation and a Gripper URDF}. 提出仅使用单帧 RGB-D 观测与夹爪 URDF 的训练免费跨夹爪抓取流程。}
+  \paperentry{共同第一作者，TRL 在投}{\textit{A Large-Scale Tactile Dataset and Joint-Posture-Conditioned Grasp Margin Matrix for Dexterous Grasp Stability Prediction}. 构建覆盖 100 个物体、100 万条 DexHand 样本的触觉抓取稳定性数据集，并提出 QGMM 表征。}
+  \paperentry{第三作者，T-RO 在投}{\textit{EAGG: Embodiment-Aligned Grasp Generation via Geometry-Aware Graph Conditioning}. 面向不同夹爪与灵巧手，结合拓扑图、低维控制空间与几何条件进行抓取生成。}
+  \paperentry{第三作者，CoRL 在投}{\textit{Minimal-Intervention Target Retrieval in Cluttered Scenes with Grasp-Conditioned Dependency Graphs}. 建模抓取条件下的物体--动作依赖，寻找最小必要介入集合。}
+  \paperentry{第一发明人}{文物碎片三维匹配与数字化修复方法，发明专利 \texttt{CN119722987A}。}
+\end{itemize}
+
+\cvsection{项目经历}
+\cventry{MomoAgent：真实机械臂上的具身智能算法验证平台}{2025.11 -- 2026.05}{北京莫测未来科技有限公司 \quad Python、LeRobot、ACT、$\pi_0$、Qt、真实机械臂系统}
+\begin{itemize}
+  \item 从舵机总线、主从臂通信、标定与相机传输搭建真实机械臂控制底座，接入 Qt 交互、LeRobot 策略部署与多模态 Agent 执行。
+  \item 建立数据采集、训练配置、推理部署和实机回放流程，支持 ACT、$\pi_0$ 等策略在真实硬件上的验证；首版系统开源后吸引近百人使用。
+\end{itemize}
+
+\cventry{多源融合无人机定位与飞行验证}{2022.09 -- 2025.06}{PX4、GNSS/IMU/UWB、传感器融合、飞行平台集成}
+\begin{itemize}
+  \item 将 GNSS、IMU 与 UWB 接入同一 PX4 飞行平台：GNSS 提供全局位置约束，IMU 维持短时状态连续性，UWB 补充近距离或卫星信号受限时的位置观测。
+  \item 参与传感器接入、通信链路排查、飞行平台集成与外场调试，定位传感器误差和环境变化导致的飞行状态问题。
+\end{itemize}
+
+\cventry{Jetson Nano 智能垃圾分类机器人}{2024.09 -- 2025.12}{国家级大学生创新创业训练计划 \quad C++、Python、ROS、PyTorch、Jetson Nano}
+\begin{itemize}
+  \item 在 Jetson Nano 上部署轻量化检测模型，构建“巡航--识别--交互--拾取”任务状态机，完成边缘端感知、控制与任务闭环。
+\end{itemize}
+
+\cvsection{竞赛与荣誉}
+\begin{itemize}
+  \item 国家奖学金（2025）；重庆市三好学生（2025）；通信工程荣誉学士学位（2026）。
+  \item ``大唐杯'' 全国大学生新一代信息通信技术大赛国家一等奖；全国大学生数学建模竞赛国家二等奖；MCM/ICM 国际一等奖。
+  \item 中国机器人及人工智能大赛全国总决赛国家三等奖；``凌特杯'' 通信系统设计大赛国家三等奖。
+\end{itemize}
+
+\cvsection{技能}
+\begin{itemize}
+  \item \textbf{编程与框架：}Python、PyTorch、C/C++、ROS、Qt、Git、Linux。
+  \item \textbf{机器人与仿真：}MuJoCo、URDF、FK/IK、CEM、RGB-D 感知、机器人抓取、传感器融合。
+  \item \textbf{系统与硬件：}LeRobot、Jetson Nano、STM32 HAL、Feetech STS3215 舵机、真实机械臂标定与部署。
+\end{itemize}
+
+\end{document}
